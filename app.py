@@ -5,28 +5,19 @@ import tempfile
 from dotenv import load_dotenv
 import streamlit as st
 from pypdf import PdfReader
-from langchain_groq import ChatGroq
-from langchain_core.messages import SystemMessage, HumanMessage
+from openai import OpenAI
 
 load_dotenv()
 
 st.set_page_config(page_title="AI Skill Assessment Agent", layout="wide")
 
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
-MODEL_NAME = os.getenv("MODEL_NAME", "llama3-70b-8192")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+MODEL_NAME = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 
-if not GROQ_API_KEY:
-    st.warning("Add GROQ_API_KEY in your environment variables or Streamlit secrets.")
+if not OPENAI_API_KEY:
+    st.warning("Add OPENAI_API_KEY in your environment variables or Space secrets.")
 
-@st.cache_resource
-def get_llm():
-    return ChatGroq(
-        api_key=GROQ_API_KEY,
-        model_name=MODEL_NAME,
-        temperature=0.2
-    )
-
-llm = get_llm()
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 def extract_text_from_pdf(uploaded_file):
     if uploaded_file is None:
@@ -55,11 +46,16 @@ def safe_json_from_text(text):
                 pass
     return None
 
+def ask_openai(prompt):
+    response = client.responses.create(
+        model=MODEL_NAME,
+        input=prompt
+    )
+    return response.output_text
+
 def analyze_job_description(jd_text):
     prompt = f"""
 You are an expert job description analyzer.
-
-Extract structured information from the job description below.
 
 Return ONLY valid JSON with this schema:
 {{
@@ -98,11 +94,10 @@ Rules:
 Job description:
 {jd_text}
 """
-    response = llm.invoke([HumanMessage(content=prompt)])
-    parsed = safe_json_from_text(response.content)
+    response_text = ask_openai(prompt)
+    parsed = safe_json_from_text(response_text)
     if parsed:
         return parsed
-
     return {
         "company_context": {
             "sector": "",
@@ -134,8 +129,8 @@ Return ONLY valid JSON with this schema:
 Resume:
 {resume_text}
 """
-    response = llm.invoke([HumanMessage(content=prompt)])
-    parsed = safe_json_from_text(response.content)
+    response_text = ask_openai(prompt)
+    parsed = safe_json_from_text(response_text)
     if parsed:
         return parsed
     return {
@@ -157,7 +152,6 @@ def score_match(jd_data, resume_data):
 
     ability_score = int((len(ability_hits) / max(len(jd_ability), 1)) * 100)
     personality_score = int((len(personality_hits) / max(len(jd_personality), 1)) * 100)
-
     overall_score = int((ability_score * 0.7) + (personality_score * 0.3))
 
     missing_ability = [s for s in jd_ability if s not in ability_hits]
@@ -197,8 +191,8 @@ Return ONLY valid JSON in this format:
 Skills:
 {json.dumps(focus_skills, indent=2)}
 """
-    response = llm.invoke([HumanMessage(content=prompt)])
-    parsed = safe_json_from_text(response.content)
+    response_text = ask_openai(prompt)
+    parsed = safe_json_from_text(response_text)
     if parsed:
         return parsed
 
@@ -260,8 +254,8 @@ Missing ability skills:
 Resume strengths:
 {json.dumps(resume_data.get("strengths", []), indent=2)}
 """
-    response = llm.invoke([HumanMessage(content=prompt)])
-    parsed = safe_json_from_text(response.content)
+    response_text = ask_openai(prompt)
+    parsed = safe_json_from_text(response_text)
     if parsed:
         return parsed
 
