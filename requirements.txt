@@ -1,5 +1,4 @@
 streamlit
 python-dotenv
 pypdf
-langchain-groq
-langchain-core
+openai
