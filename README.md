@@ -208,7 +208,7 @@ The final output is displayed in the Streamlit interface and includes the summar
 
 The scoring is role-specific and changes based on whether the job is more ability-heavy, personality-heavy, or balanced. The app compares the resume against the job description, gives separate ability and personality scores, and then combines them using weights based on the role type so technical roles emphasize ability more while people-focused roles emphasize personality more.
 
-## Input Samples that can be used as examples to run the application
+## Sample Inputs for Running the Application
 
 Sample - 1 
 Job Description – Medical Sector
