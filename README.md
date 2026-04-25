@@ -281,7 +281,6 @@ Education
 
 ---
 Sample - 2
-
 Job Description – Startup Tech Company 
 
 **Role:** Junior Python Data Analyst  
@@ -344,12 +343,13 @@ Education
 - Bachelor of Science in Information Technology
 
 ---
-# Sample - 3 
+Sample - 3 
 
 pdf formated 
 - [Financial Analyst Job Description (PDF)](Financial-Analyst-Job-Description.pdf)
 - [Resume Example (PDF)](resume-example.pdf)
 
+These sample inputs can be used as examples to understand how the model works and to test its output against different resumes and job descriptions.
 
 ## Demo video
 - Add your 3–5 minute demo video link here.
