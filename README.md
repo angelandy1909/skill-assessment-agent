@@ -156,6 +156,72 @@ E --> H[Learning Plan]
 E --> I[Scoring/Gap Explanations]
 ```
 
+The diagram shows a simple end-to-end workflow for the app. The user first uploads a job description and resume into the Streamlit interface, the app extracts text from the files, sends that text to Groq for analysis, and then applies scoring logic to generate the final outputs. After analysis, the app produces the summary section, assessment questions, learning plan, and scoring/gap explanations. This structure helps users understand not only the fit score, but also why the score was given and what the candidate should improve next.
+
+## Detailed Architecture
+
+flowchart LR
+A[User uploads JD and Resume] --> B[Streamlit App on Hugging Face Spaces]
+B --> C[PDF/Text Extraction]
+C --> D[Groq Analysis]
+
+D --> E[Candidate Match Analysis]
+
+E --> F1[Skill Match Score]
+E --> F2[Experience Match Score]
+E --> F3[Keyword Relevance]
+E --> F4[Role Fit Assessment]
+
+F1 --> G[Scoring Logic]
+F2 --> G
+F3 --> G
+F4 --> G
+
+G --> H[Final Match Score]
+G --> I[Gap Identification]
+
+H --> J[Summary Section]
+H --> K[Scoring/Gap Explanations]
+
+I --> L[Learning Plan Generator]
+
+L --> M1[Missing Skills]
+L --> M2[Suggested Topics]
+L --> M3[Recommended Practice]
+L --> M4[Improvement Roadmap]
+
+M1 --> N[Learning Plan]
+M2 --> N
+M3 --> N
+M4 --> N
+
+N --> O[Final Output Display]
+J --> O
+K --> O
+
+## Explanation
+Architecture
+The architecture begins when the user uploads a job description and resume into the Streamlit application hosted on Hugging Face Spaces. The app extracts text from the uploaded PDF or text files and sends the content to Groq for analysis.
+
+Candidate match analysis
+The Groq analysis compares the resume with the job description to identify matched skills, missing skills, experience alignment, keyword relevance, and overall role fit. These analysis results are then passed into the scoring logic for evaluation.
+
+Scoring logic
+The scoring logic calculates the final match score by combining the analyzed signals such as skill match, experience match, keyword relevance, and role fit. This stage focuses on determining how well the candidate fits the job requirements.
+
+Skill-gap reasoning
+The skill-gap reasoning stage explains why the candidate received a particular score. It identifies missing skills, weak areas, and improvement points by comparing the resume directly with the job description.
+
+Learning plan generation
+The learning plan is created from the identified gaps. It includes suggested topics, recommended practice, and an improvement roadmap to help the candidate close the skill gaps.
+
+Final output
+The final output is displayed in the Streamlit interface and includes the summary section, scoring or gap explanations, assessment questions, and the learning plan. This makes the architecture easy to understand because it clearly separates analysis, scoring, gap reasoning, and improvement guidance.
+
+## How Scoring Works
+
+The scoring is role-specific and changes based on whether the job is more ability-heavy, personality-heavy, or balanced. The app compares the resume against the job description, gives separate ability and personality scores, and then combines them using weights based on the role type so technical roles emphasize ability more while people-focused roles emphasize personality more.
+
 ## Demo video
 - Add your 3–5 minute demo video link here.
 
