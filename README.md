@@ -17,7 +17,7 @@ JD Skill Analyzer is a Streamlit-based AI application deployed on **Hugging Face
 ## Live Demo
 - [[https://huggingface.co/spaces/Angelandy/JD-Skill-Analyzer](https://huggingface.co/spaces/Angelandy/JD-Skill-Analyzer)]
 
-## What this project helps with
+## Project Purpose
 This project helps compare a **job description** with a **resume** to see how well a candidate fits a role. The model analyzes the candidate’s resume against a company-specific job description and identifies skill gaps, keyword gaps, and role alignment issues. Based on this analysis, it suggests resume edits and learning recommendations to improve the candidate’s match with the target role. It helps candidates understand what is missing in their resume for a specific company or role. They can then improve their resume wording, highlight the right experience, and focus on the skills they need to build. It helps recruiters and hiring teams shortlist candidates faster. Instead of manually reading every resume in detail, they can quickly see who is a strong match, who has gaps, and who may need further evaluation. This saves time and improves hiring quality. The model acts like a bridge between a job opening and a candidate’s resume. It tells the candidate how to improve and tells the company who fits best.
 
 It helps to:
@@ -210,7 +210,7 @@ The scoring is role-specific and changes based on whether the job is more abilit
 
 ## Input Samples that can be used as examples to run the application
 
-#  Sample - 1 
+Sample - 1 
 Job Description – Medical Sector
 
 **Role:** Junior Python Data Analyst  
@@ -247,7 +247,7 @@ Preferred Skills
 
 ---
 
-# Resume 
+Resume 
 
 **Name:** Drishti Menon  
 **Location:** Chennai, India  
@@ -281,7 +281,7 @@ Projects
 Education
 - Bachelor of Science in Computer Science with specialization in Healthcare Informatics
 
-#  Sample - 2
+Sample - 2
 
 Job Description – Startup Tech Company 
 
@@ -318,7 +318,7 @@ Preferred Skills
 
 ---
 
-# Sample Resume
+Resume
 
 **Name:** Neha Varma  
 **Location:** Chennai, India  
@@ -349,8 +349,8 @@ Education
 # Sample - 3 
 
 # pdf formated 
-- [Financial Analyst Job Description (PDF)](docs/Financial-Analyst-Job-Description.pdf)
-- [Financial Analyst Resume Example (PDF)](docs/financial-analyst-resume-example.pdf)
+- [Financial Analyst Job Description (PDF)](Financial-Analyst-Job-Description.pdf)
+- [Financial Analyst Resume Example (PDF)](financial-analyst-resume-example.pdf)
 
 
 ## Demo video
