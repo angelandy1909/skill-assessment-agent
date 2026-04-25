@@ -18,7 +18,8 @@ JD Skill Analyzer is a Streamlit-based AI application deployed on **Hugging Face
 - [[https://huggingface.co/spaces/Angelandy/JD-Skill-Analyzer](https://huggingface.co/spaces/Angelandy/JD-Skill-Analyzer)]
 
 ## Project Purpose
-This project helps compare a **job description** with a **resume** to see how well a candidate fits a role. The model analyzes the candidate’s resume against a company-specific job description and identifies skill gaps, keyword gaps, and role alignment issues. Based on this analysis, it suggests resume edits and learning recommendations to improve the candidate’s match with the target role. It helps candidates understand what is missing in their resume for a specific company or role. They can then improve their resume wording, highlight the right experience, and focus on the skills they need to build. It helps recruiters and hiring teams shortlist candidates faster. Instead of manually reading every resume in detail, they can quickly see who is a strong match, who has gaps, and who may need further evaluation. This saves time and improves hiring quality. The model acts like a bridge between a job opening and a candidate’s resume. It tells the candidate how to improve and tells the company who fits best.
+JD Skill Analyzer compares a job description with a resume to evaluate candidate fit. It identifies skill gaps, keyword gaps and role alignment issues, then suggests resume edits and personalized learning recommendations. This helps candidates highlight the right experience and build missing skills through a personalized learning plan focused on adjacent skills, with suggested platforms that provide easy access to the right resources. It also generates assessment questions based on weak or missing skills, helping candidates prepare for interviews while enabling recruiters to quickly see strong matches, gaps, and areas needing further evaluation. The tool acts as a bridge between job openings and resumes, improving both candidate preparation and hiring efficiency.
+
 
 It helps to:
 - Identify **hard skills** the candidate has or is missing, such as Python, SQL, data analysis, dashboarding, or generative AI.
@@ -160,49 +161,6 @@ E --> I[Scoring/Gap Explanations]
 
 The diagram shows a simple end-to-end workflow for the app. The user first uploads a job description and resume into the Streamlit interface, the app extracts text from the files, sends that text to Groq for analysis, and then applies scoring logic to generate the final outputs. After analysis, the app produces the summary section, assessment questions, learning plan, and scoring/gap explanations. This structure helps users understand not only the fit score, but also why the score was given and what the candidate should improve next.
 
-## Detailed Architecture
-
-```mermaid
-flowchart LR
-A[User uploads JD and Resume] --> B[Streamlit App on Hugging Face Spaces]
-B --> C[PDF/Text Extraction]
-C --> D[Groq Analysis]
-D --> E[Candidate Match Analysis]
-E --> F1[Skill Match Score]
-E --> F2[Experience Match Score]
-E --> F3[Keyword Relevance]
-E --> F4[Role Fit Assessment]
-F1 --> G[Scoring Logic]
-F2 --> G
-F3 --> G
-F4 --> G
-G --> H[Final Match Score]
-G --> I[Gap Identification]
-I --> L[Learning Plan Generator]
-L --> N[Learning Plan]
-H --> J[Summary Section]
-H --> K[Scoring/Gap Explanations]
-J --> O[Final Output Display]
-K --> O
-N --> O
-```
-
-The architecture begins when the user uploads a job description and resume into the Streamlit application hosted on Hugging Face Spaces. The app extracts text from the uploaded PDF or text files and sends the content to Groq for analysis.
-
-Candidate match analysis
-The Groq analysis compares the resume with the job description to identify matched skills, missing skills, experience alignment, keyword relevance, and overall role fit. These analysis results are then passed into the scoring logic for evaluation.
-
-Scoring logic
-The scoring logic calculates the final match score by combining the analyzed signals such as skill match, experience match, keyword relevance, and role fit. This stage focuses on determining how well the candidate fits the job requirements.
-
-Skill-gap reasoning
-The skill-gap reasoning stage explains why the candidate received a particular score. It identifies missing skills, weak areas, and improvement points by comparing the resume directly with the job description.
-
-Learning plan generation
-The learning plan is created from the identified gaps. It includes suggested topics, recommended practice, and an improvement roadmap to help the candidate close the skill gaps.
-
-Final output
-The final output is displayed in the Streamlit interface and includes the summary section, scoring or gap explanations, assessment questions, and the learning plan. This makes the architecture easy to understand because it clearly separates analysis, scoring, gap reasoning, and improvement guidance.
 
 ## How Scoring Works
 
@@ -275,69 +233,6 @@ Education
 
 ---
 Sample - 2
-Job Description – Startup Tech Company 
-
-**Role:** Junior Python Data Analyst  
-**Sector:** Technology / SaaS Startup  
-**Location:** Chennai, India  
-**Type:** Full-time  
-
-We are seeking a Junior Python Data Analyst to support product analytics and growth initiatives in our fast-moving startup. The role requires strong Python and SQL skills, familiarity with cloud environments, API integration, and the ability to collaborate with product and engineering teams.
-
-Responsibilities
-- Clean, transform, and analyze product usage and customer data using Python and SQL.
-- Support product teams with ad-hoc analysis and reporting.
-- Collaborate with engineers to integrate data pipelines and APIs.
-- Document workflows and ensure reproducibility of analysis.
-- Identify trends and opportunities for product optimization.
-- Present findings clearly to both technical and non-technical stakeholders.
-
-Required Skills
-- Python  
-- SQL  
-- Data analysis  
-- Cloud platforms (AWS, GCP, Azure)  
-- API integration  
-- Communication  
-- Teamwork  
-- Attention to detail  
-- Adaptability  
-
-Preferred Skills
-- Experience with SaaS or startup environments  
-- Problem solving  
-- Exposure to product analytics tools (Mixpanel, Amplitude)  
-
-Sample Resume
-
-**Name:** Neha Varma  
-**Location:** Chennai, India  
-
-Summary
-Recent graduate with basic exposure to Python and spreadsheets. Enthusiastic about learning data analysis but limited experience with SQL, cloud platforms, and API integration. Looking to grow into a data analyst role in a startup environment.
-
-Skills
-- Python (basic scripting)  
-- Excel  
-- Communication  
-- Team collaboration  
-- Problem solving  
-
-Experience
-**Intern | Local Business Operations**  
-- Entered and organized sales data in Excel.  
-- Assisted with basic reporting tasks.  
-- Supported operations team with manual data entry.  
-
-Projects
-- Created a simple Excel chart for monthly sales.  
-- Wrote a basic Python script to calculate averages.  
-
-Education
-- Bachelor of Science in Information Technology
-
----
-Sample - 3 
 
 pdf formated 
 - [Financial Analyst Job Description (PDF)](Financial-Analyst-Job-Description.pdf)
