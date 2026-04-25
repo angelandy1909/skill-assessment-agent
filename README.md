@@ -245,8 +245,6 @@ Preferred Skills
 - Knowledge of HIPAA or medical data compliance  
 - Problem solving  
 
----
-
 Resume 
 
 **Name:** Drishti Menon  
@@ -281,6 +279,7 @@ Projects
 Education
 - Bachelor of Science in Computer Science with specialization in Healthcare Informatics
 
+---
 Sample - 2
 
 Job Description – Startup Tech Company 
@@ -316,8 +315,6 @@ Preferred Skills
 - Problem solving  
 - Exposure to product analytics tools (Mixpanel, Amplitude)  
 
----
-
 Resume
 
 **Name:** Neha Varma  
@@ -346,11 +343,10 @@ Projects
 Education
 - Bachelor of Science in Information Technology
 
+---
 # Sample - 3 
 
 # pdf formated 
-- [Financial Analyst Job Description (PDF)](Financial-Analyst-Job-Description.pdf)
-- [Financial Analyst Resume Example (PDF)](financial-analyst-resume-example.pdf)
 
 
 ## Demo video
