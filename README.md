@@ -213,71 +213,65 @@ The scoring is role-specific and changes based on whether the job is more abilit
 Sample - 1 
 Job Description – Medical Sector
 
-**Role:** Junior Python Data Analyst  
-**Sector:** Healthcare / Medical Research  
+**Role:** Emergency Medical Technician (EMT)  
+**Sector:** Healthcare / Emergency Services  
 **Location:** Chennai, India  
 **Type:** Full-time  
 
-We are seeking a Junior Python Data Analyst to support clinical data management, reporting, and visualization for a growing healthcare analytics team. The role requires strong Python and SQL skills, familiarity with medical datasets, and the ability to collaborate with doctors, researchers, and operations teams.
+We are seeking a dedicated Emergency Medical Technician (EMT) to join our hospital’s emergency response team. The role requires strong clinical knowledge, quick decision-making skills, and the ability to provide immediate care to patients in critical situations. You will work closely with doctors, nurses, and paramedics to stabilize patients and ensure safe transport to medical facilities.
 
 Responsibilities
-- Clean, transform, and analyze patient and clinical trial data using Python and SQL.
-- Build dashboards and reports to support medical researchers and hospital administrators.
-- Work with clinical and operations teams to understand reporting needs.
-- Document workflows to ensure reproducibility and compliance with healthcare standards.
-- Identify trends, anomalies, and risk factors in medical datasets.
-- Present findings clearly to both technical and non-technical healthcare stakeholders.
+- Respond to emergency calls and provide immediate medical care on-site.  
+- Assess patient condition and administer first aid, CPR, or advanced life support as required.  
+- Safely transport patients to hospitals while monitoring vital signs.  
+- Collaborate with doctors and nurses to hand over patient information accurately.  
+- Maintain medical equipment and ensure readiness of emergency kits.  
+- Document patient care and prepare incident reports.  
 
 Required Skills
-- Python  
-- SQL  
-- Data analysis  
-- Dashboarding  
-- Excel or spreadsheets  
-- Communication  
-- Teamwork  
-- Attention to detail  
-- Adaptability  
+- Knowledge of emergency medical procedures  
+- CPR and first aid certification  
+- Ability to operate medical equipment (defibrillators, oxygen tanks, stretchers)  
+- Strong communication and teamwork skills  
+- Physical stamina and ability to work under pressure  
+- Attention to detail and adaptability  
 
 Preferred Skills
-- Power BI or Tableau  
-- Experience with healthcare/clinical data  
-- Knowledge of HIPAA or medical data compliance  
-- Problem solving  
+- Advanced life support certification  
+- Experience in hospital or ambulance services  
+- Familiarity with electronic health records (EHR) systems  
+- Problem solving in high-stress environments  
 
-Resume 
+Sample Resume
 
-**Name:** Drishti Menon  
+**Name:** Arjun Menon  
 **Location:** Chennai, India  
 
 Summary
-Analytical and detail-oriented data professional with experience in Python, SQL, and healthcare reporting. Skilled at transforming medical datasets into actionable insights and collaborating with cross-functional teams in clinical environments.
+Compassionate and quick-thinking Emergency Medical Technician with hands-on experience in patient care during emergencies. Skilled in CPR, first aid, and safe patient transport. Dedicated to ensuring patient safety and collaborating effectively with healthcare teams.
 
 Skills
-- Python (Pandas, NumPy)  
-- SQL  
-- Excel  
-- Power BI  
-- Data visualization  
-- Reporting  
+- CPR and First Aid  
+- Patient assessment  
+- Medical equipment handling  
 - Communication  
 - Team collaboration  
 - Problem solving  
 
 Experience
-**Data Analyst Intern | MedTech Analytics**  
-- Cleaned and transformed patient records and trial data using Python and SQL.  
-- Built weekly dashboards for hospital administrators and research teams.  
-- Collaborated with doctors and operations staff to clarify reporting requirements.  
-- Presented findings to non-technical healthcare stakeholders.  
+**EMT Intern | Chennai General Hospital**  
+- Responded to emergency calls and assisted in stabilizing patients.  
+- Administered CPR and first aid under supervision of senior paramedics.  
+- Assisted in transporting patients safely to hospital facilities.  
+- Documented patient information and prepared incident reports.  
 
 Projects
-- Developed a Power BI dashboard to track patient recovery metrics.  
-- Automated cleaning of CSV-based clinical trial data using Python scripts.  
-- Created a reporting workflow for recurring hospital performance metrics.  
+- Organized a community CPR training workshop.  
+- Assisted in setting up emergency medical kits for hospital ambulances.  
 
 Education
-- Bachelor of Science in Computer Science with specialization in Healthcare Informatics
+- Diploma in Emergency Medical Technology  
+- Certified in CPR and Basic Life Support (BLS)
 
 ---
 Sample - 2
@@ -314,7 +308,7 @@ Preferred Skills
 - Problem solving  
 - Exposure to product analytics tools (Mixpanel, Amplitude)  
 
-Resume
+Sample Resume
 
 **Name:** Neha Varma  
 **Location:** Chennai, India  
