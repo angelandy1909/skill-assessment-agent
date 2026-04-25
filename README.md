@@ -164,40 +164,24 @@ flowchart LR
 A[User uploads JD and Resume] --> B[Streamlit App on Hugging Face Spaces]
 B --> C[PDF/Text Extraction]
 C --> D[Groq Analysis]
-
 D --> E[Candidate Match Analysis]
-
 E --> F1[Skill Match Score]
 E --> F2[Experience Match Score]
 E --> F3[Keyword Relevance]
 E --> F4[Role Fit Assessment]
-
 F1 --> G[Scoring Logic]
 F2 --> G
 F3 --> G
 F4 --> G
-
 G --> H[Final Match Score]
 G --> I[Gap Identification]
-
+I --> L[Learning Plan Generator]
+L --> N[Learning Plan]
 H --> J[Summary Section]
 H --> K[Scoring/Gap Explanations]
-
-I --> L[Learning Plan Generator]
-
-L --> M1[Missing Skills]
-L --> M2[Suggested Topics]
-L --> M3[Recommended Practice]
-L --> M4[Improvement Roadmap]
-
-M1 --> N[Learning Plan]
-M2 --> N
-M3 --> N
-M4 --> N
-
-N --> O[Final Output Display]
-J --> O
+J --> O[Final Output Display]
 K --> O
+N --> O
 
 ## Explanation
 Architecture
