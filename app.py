@@ -2,22 +2,19 @@ import os
 import json
 import re
 import tempfile
-from dotenv import load_dotenv
 import streamlit as st
 from pypdf import PdfReader
-from openai import OpenAI
+from groq import Groq
 
-load_dotenv()
+st.set_page_config(page_title="JD Skill Analyzer", layout="wide")
 
-st.set_page_config(page_title="AI Skill Assessment Agent", layout="wide")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+MODEL_NAME = os.getenv("GROQ_MODEL", "llama-3.1-70b-versatile")
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
-MODEL_NAME = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+if not GROQ_API_KEY:
+    st.warning("Add GROQ_API_KEY in your Hugging Face Space secrets.")
 
-if not OPENAI_API_KEY:
-    st.warning("Add OPENAI_API_KEY in your environment variables or Space secrets.")
-
-client = OpenAI(api_key=OPENAI_API_KEY)
+client = Groq(api_key=GROQ_API_KEY)
 
 def extract_text_from_pdf(uploaded_file):
     if uploaded_file is None:
@@ -46,12 +43,16 @@ def safe_json_from_text(text):
                 pass
     return None
 
-def ask_openai(prompt):
-    response = client.responses.create(
+def ask_groq(prompt):
+    response = client.chat.completions.create(
         model=MODEL_NAME,
-        input=prompt
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant that returns only valid JSON when asked."},
+            {"role": "user", "content": prompt}
+        ],
+        temperature=0.2
     )
-    return response.output_text
+    return response.choices[0].message.content
 
 def analyze_job_description(jd_text):
     prompt = f"""
@@ -94,18 +95,12 @@ Rules:
 Job description:
 {jd_text}
 """
-    response_text = ask_openai(prompt)
+    response_text = ask_groq(prompt)
     parsed = safe_json_from_text(response_text)
     if parsed:
         return parsed
     return {
-        "company_context": {
-            "sector": "",
-            "company_stage": "",
-            "culture_signals": [],
-            "work_style": [],
-            "business_context": ""
-        },
+        "company_context": {"sector": "", "company_stage": "", "culture_signals": [], "work_style": [], "business_context": ""},
         "ability_skills": [],
         "personality_skills": [],
         "role_summary": "",
@@ -129,7 +124,7 @@ Return ONLY valid JSON with this schema:
 Resume:
 {resume_text}
 """
-    response_text = ask_openai(prompt)
+    response_text = ask_groq(prompt)
     parsed = safe_json_from_text(response_text)
     if parsed:
         return parsed
@@ -191,7 +186,7 @@ Return ONLY valid JSON in this format:
 Skills:
 {json.dumps(focus_skills, indent=2)}
 """
-    response_text = ask_openai(prompt)
+    response_text = ask_groq(prompt)
     parsed = safe_json_from_text(response_text)
     if parsed:
         return parsed
@@ -254,7 +249,7 @@ Missing ability skills:
 Resume strengths:
 {json.dumps(resume_data.get("strengths", []), indent=2)}
 """
-    response_text = ask_openai(prompt)
+    response_text = ask_groq(prompt)
     parsed = safe_json_from_text(response_text)
     if parsed:
         return parsed
