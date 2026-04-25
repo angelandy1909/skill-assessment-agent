@@ -9,7 +9,7 @@ from groq import Groq
 st.set_page_config(page_title="JD Skill Analyzer", layout="wide")
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
-MODEL_NAME = os.getenv("GROQ_MODEL", "llama-3.1-70b-versatile")
+MODEL_NAME = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 
 if not GROQ_API_KEY:
     st.warning("Add GROQ_API_KEY in your Hugging Face Space secrets.")
