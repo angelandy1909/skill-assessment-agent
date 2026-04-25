@@ -47,14 +47,14 @@ In short, it is a tool for **candidate-job matching, skill-gap analysis, and per
 - Build a personalized learning plan.
 - Recommend learning resources with **free** and **paid** labels.
 
-## Why hard skills and soft skills both matter
+## Why Both Skill Types Matter
 - **Hard skills** are technical, measurable abilities such as Python, SQL, data analysis, dashboards, or Gen AI.
 - **Soft skills** are behavioral and interpersonal qualities such as teamwork, communication, adaptability, and collaboration.
 - Hard skills show whether the candidate can do the work.
 - Soft skills show whether the candidate can work well in the team and company culture.
 - Including both gives a more realistic evaluation of the candidate’s overall fit.
 
-## Why organization and sector context matters
+## Understanding Organization and Sector Relevance
 - The organization name and sector help the model understand the company’s environment and business goals.
 - Sector context improves interpretation of required skills, for example a startup may value speed and flexibility more than a large enterprise.
 - Organization context also helps infer culture signals and work style from the JD.
