@@ -346,7 +346,9 @@ Education
 ---
 # Sample - 3 
 
-# pdf formated 
+pdf formated 
+- [Financial Analyst Job Description (PDF)](Financial-Analyst-Job-Description.pdf)
+- [Resume Example (PDF)](resume-example.pdf)
 
 
 ## Demo video
