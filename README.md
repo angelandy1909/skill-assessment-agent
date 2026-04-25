@@ -12,21 +12,23 @@ license: mit
 
 # JD Skill Analyzer
 
-JD Skill Analyzer is a Streamlit-based AI application deployed on **Hugging Face Spaces**. It analyzes a job description and a resume, identifies skill gaps, evaluates personality and work-style fit, generates interview-style assessment questions, and creates a personalized learning plan.
+JD Skill Analyzer is a Streamlit-based AI application deployed on **Hugging Face Spaces**. It analyzes a job description and a resume, identifies skill gaps, evaluates personality and work-style fit, generates interview-style assessment questions, and creates a personalized learning plan focused on adjacent skills the candidate can realistically acquire.
 
 ## Live Demo
-- [https://huggingface.co/spaces/Angelandy/JD-Skill-Analyzer](https://huggingface.co/spaces/Angelandy/JD-Skill-Analyzer)
+- [[https://huggingface.co/spaces/Angelandy/JD-Skill-Analyzer](https://huggingface.co/spaces/Angelandy/JD-Skill-Analyzer)]
 
 ## What this project helps with
 This project helps compare a **job description** with a **resume** to see how well a candidate fits a role.
 
 It helps to:
-- Identify **hard skills** the candidate has or is missing, such as Python, SQL, data analysis, or dashboarding.
-- Identify **soft skills** or personality-related traits, such as communication, teamwork, and adaptability.
+- Identify **hard skills** the candidate has or is missing, such as Python, SQL, data analysis, dashboarding, or generative AI.
+- Identify **soft skills** or personality-related traits, such as communication, teamwork, adaptability, and collaboration.
 - Estimate **overall fit** for the role.
 - Explain in simple text **why the candidate is a good fit or not**.
-- Generate **assessment questions** for missing skills.
-- Create a **personalized learning plan** to close skill gaps.
+- Explain **how the score is calculated** using ability and personality weights.
+- Show a **detailed role-analysis reason** based on signals found in the job description.
+- Generate **assessment questions** based on missing or weakly supported skills.
+- Create a **personalized learning plan** with estimated time, curated resources, and free/paid course suggestions.
 - Support hiring or career development decisions by making JD and resume analysis faster and clearer.
 
 In short, it is a tool for **candidate-job matching, skill-gap analysis, and personalized improvement guidance**.
@@ -37,12 +39,14 @@ In short, it is a tool for **candidate-job matching, skill-gap analysis, and per
 - Analyze the job description using Groq.
 - Detect hard skills and soft skills separately.
 - Calculate overall fit, ability fit, and personality fit.
-- Generate a clear paragraph summary of missing skills and organizational fit.
+- Generate a clear paragraph summary of candidate fit.
+- Add detailed explanations for scoring, job description understanding, resume profiling, and skill-gap reasoning.
 - Generate assessment questions.
 - Build a personalized learning plan.
+- Recommend learning resources with **free** and **paid** labels.
 
 ## Why hard skills and soft skills both matter
-- **Hard skills** are technical, measurable abilities such as Python, SQL, data analysis, or dashboarding.
+- **Hard skills** are technical, measurable abilities such as Python, SQL, data analysis, dashboards, or Gen AI.
 - **Soft skills** are behavioral and interpersonal qualities such as teamwork, communication, adaptability, and collaboration.
 - Hard skills show whether the candidate can do the work.
 - Soft skills show whether the candidate can work well in the team and company culture.
@@ -54,15 +58,44 @@ In short, it is a tool for **candidate-job matching, skill-gap analysis, and per
 - Organization context also helps infer culture signals and work style from the JD.
 - This makes the summary and learning plan more relevant and personalized.
 
-## Deployment
-This project is deployed on Hugging Face Spaces using Streamlit. The GitHub repository uses `app.py` as the main file, and the Hugging Face Space runs the same codebase from its own configured app file path. The app reads the `GROQ_API_KEY` secret from Hugging Face, extracts text from the uploaded JD and resume, sends the content to the Groq model for analysis, and then displays the score, summary, questions, and learning plan in the web app.
+## Scoring logic
+- Ability skills are matched against resume skills, tools, strengths, and domain evidence.
+- Personality skills are matched against resume strengths and behavioral signals.
+- The app now explains the score calculation in text.
+- The role analysis also explains why the role is treated as ability-heavy, personality-heavy, or balanced.
+- In the current logic, the final score is calculated using role-specific weights across ability and personality fit.
 
-## How scoring works
-- Ability skills are matched against resume skills and tools.
-- Personality skills are matched against strengths and behavioral signals.
-- Overall fit is calculated as:
-  - 70% ability score
-  - 30% personality score
+## Learning plan
+The learning plan is now more personalized and practical.
+
+It:
+- Focuses on **adjacent skills** the candidate can realistically acquire next.
+- Includes **estimated time** for each priority skill.
+- Suggests **curated resources** for each missing skill.
+- Labels courses and resources as **free** or **paid**.
+- Can recommend examples like **Kaggle’s free Gen AI training** for Gen AI-related gaps.
+- Gives a **detailed strategy** section that explains what to learn first and why.
+
+## Assessment questions
+The assessment questions are now generated based on the skills that are missing or weakly supported in the resume.
+
+They are designed to:
+- Focus on high-impact ability gaps first.
+- Include the most relevant personality gaps.
+- Ask practical interview-style questions.
+- Show what a strong answer should include.
+
+## Skill-gap reasoning
+The app now explains how skill gaps are identified.
+
+It compares:
+- The skills and evidence mentioned in the **job description**, and
+- The skills, tools, strengths, and behavioral signals in the **resume**.
+
+A skill gap is shown when the JD asks for a capability or behavior and the resume does not provide a matching signal or close equivalent. This makes the comparison easier to understand and more transparent.
+
+## Deployment
+This project is deployed on Hugging Face Spaces using Streamlit. The GitHub repository uses `app.py` as the main file, and the Hugging Face Space runs the same codebase from its configured app file path. The app reads the `GROQ_API_KEY` secret from Hugging Face, extracts text from the uploaded JD and resume, sends the content to the Groq model for analysis, and then displays the score, summary, explanations, questions, and learning plan in the web app.
 
 ## Tech stack
 - Streamlit
@@ -70,6 +103,7 @@ This project is deployed on Hugging Face Spaces using Streamlit. The GitHub repo
 - Groq API
 - pypdf
 - Hugging Face Spaces
+- Pydantic
 
 ## Local setup
 1. Clone the repository:
@@ -91,7 +125,7 @@ This project is deployed on Hugging Face Spaces using Streamlit. The GitHub repo
 
 ## Sample input
 ### Job Description
-A role requiring Python, SQL, dashboards, stakeholder communication, teamwork, and adaptability.
+A role requiring Python, SQL, dashboards, stakeholder communication, teamwork, adaptability, and Gen AI familiarity.
 
 ### Resume
 A candidate with Python, pandas, SQL, reporting, and team project experience.
@@ -101,9 +135,13 @@ A candidate with Python, pandas, SQL, reporting, and team project experience.
 - Ability fit score
 - Personality fit score
 - Summary paragraph
-- Missing skills
+- Score explanation paragraph
+- Job description explanation paragraph
+- Resume profile explanation paragraph
+- Skill gap explanation paragraph
 - Assessment questions
 - Personalized learning plan
+- Free/paid course suggestions
 
 ## Architecture
 ```mermaid
@@ -115,6 +153,7 @@ D --> E[Scoring Logic]
 E --> F[Summary Section]
 E --> G[Assessment Questions]
 E --> H[Learning Plan]
+E --> I[Scoring/Gap Explanations]
 ```
 
 ## Demo video
@@ -123,7 +162,7 @@ E --> H[Learning Plan]
 ## Notes
 - This project is deployed on Hugging Face Spaces using Streamlit.
 - The app file in this repository is `app.py`.
-- The same codebase is used for the Hugging Face deployment under the file 'src/streamlit.app.py'.
-- The Hugging Face Space is configured to run the correct app file from its own repository structure.
-- Both deployments use the same codebase and logic.
-- The public repo contains the source code and README for submission.
+- The same codebase is used for the Hugging Face deployment.
+- The app now includes more detailed explanations for scoring, skill gaps, and role analysis.
+- The learning plan now includes curated free and paid courses for missing skills.
+- Groq JSON mode is used to ensure valid JSON outputs for structured sections.
