@@ -126,10 +126,10 @@ This project is deployed on Hugging Face Spaces using Streamlit. The GitHub repo
    ```
 
 ## Sample input
-### Job Description
+## Job Description
 A role requiring Python, SQL, dashboards, stakeholder communication, teamwork, adaptability, and Gen AI familiarity.
 
-### Resume
+## Resume
 A candidate with Python, pandas, SQL, reporting, and team project experience.
 
 ## Sample output
@@ -211,7 +211,7 @@ The scoring is role-specific and changes based on whether the job is more abilit
 ## Input Samples that can be used as examples to run the application
 
 #  Sample - 1 
-#  Job Description – Medical Sector
+Job Description – Medical Sector
 
 **Role:** Junior Python Data Analyst  
 **Sector:** Healthcare / Medical Research  
@@ -220,7 +220,7 @@ The scoring is role-specific and changes based on whether the job is more abilit
 
 We are seeking a Junior Python Data Analyst to support clinical data management, reporting, and visualization for a growing healthcare analytics team. The role requires strong Python and SQL skills, familiarity with medical datasets, and the ability to collaborate with doctors, researchers, and operations teams.
 
-## Responsibilities
+Responsibilities
 - Clean, transform, and analyze patient and clinical trial data using Python and SQL.
 - Build dashboards and reports to support medical researchers and hospital administrators.
 - Work with clinical and operations teams to understand reporting needs.
@@ -228,7 +228,7 @@ We are seeking a Junior Python Data Analyst to support clinical data management,
 - Identify trends, anomalies, and risk factors in medical datasets.
 - Present findings clearly to both technical and non-technical healthcare stakeholders.
 
-## Required Skills
+Required Skills
 - Python  
 - SQL  
 - Data analysis  
@@ -239,7 +239,7 @@ We are seeking a Junior Python Data Analyst to support clinical data management,
 - Attention to detail  
 - Adaptability  
 
-## Preferred Skills
+Preferred Skills
 - Power BI or Tableau  
 - Experience with healthcare/clinical data  
 - Knowledge of HIPAA or medical data compliance  
@@ -247,15 +247,15 @@ We are seeking a Junior Python Data Analyst to support clinical data management,
 
 ---
 
-# Sample Resume 
+# Resume 
 
 **Name:** Drishti Menon  
 **Location:** Chennai, India  
 
-## Summary
+Summary
 Analytical and detail-oriented data professional with experience in Python, SQL, and healthcare reporting. Skilled at transforming medical datasets into actionable insights and collaborating with cross-functional teams in clinical environments.
 
-## Skills
+Skills
 - Python (Pandas, NumPy)  
 - SQL  
 - Excel  
@@ -266,24 +266,24 @@ Analytical and detail-oriented data professional with experience in Python, SQL,
 - Team collaboration  
 - Problem solving  
 
-## Experience
+Experience
 **Data Analyst Intern | MedTech Analytics**  
 - Cleaned and transformed patient records and trial data using Python and SQL.  
 - Built weekly dashboards for hospital administrators and research teams.  
 - Collaborated with doctors and operations staff to clarify reporting requirements.  
 - Presented findings to non-technical healthcare stakeholders.  
 
-## Projects
+Projects
 - Developed a Power BI dashboard to track patient recovery metrics.  
 - Automated cleaning of CSV-based clinical trial data using Python scripts.  
 - Created a reporting workflow for recurring hospital performance metrics.  
 
-## Education
+Education
 - Bachelor of Science in Computer Science with specialization in Healthcare Informatics
 
 #  Sample - 2
 
-# Sample Job Description – Startup Tech Company 
+Job Description – Startup Tech Company 
 
 **Role:** Junior Python Data Analyst  
 **Sector:** Technology / SaaS Startup  
@@ -292,7 +292,7 @@ Analytical and detail-oriented data professional with experience in Python, SQL,
 
 We are seeking a Junior Python Data Analyst to support product analytics and growth initiatives in our fast-moving startup. The role requires strong Python and SQL skills, familiarity with cloud environments, API integration, and the ability to collaborate with product and engineering teams.
 
-## Responsibilities
+Responsibilities
 - Clean, transform, and analyze product usage and customer data using Python and SQL.
 - Support product teams with ad-hoc analysis and reporting.
 - Collaborate with engineers to integrate data pipelines and APIs.
@@ -300,7 +300,7 @@ We are seeking a Junior Python Data Analyst to support product analytics and gro
 - Identify trends and opportunities for product optimization.
 - Present findings clearly to both technical and non-technical stakeholders.
 
-## Required Skills
+Required Skills
 - Python  
 - SQL  
 - Data analysis  
@@ -311,7 +311,7 @@ We are seeking a Junior Python Data Analyst to support product analytics and gro
 - Attention to detail  
 - Adaptability  
 
-## Preferred Skills
+Preferred Skills
 - Experience with SaaS or startup environments  
 - Problem solving  
 - Exposure to product analytics tools (Mixpanel, Amplitude)  
@@ -323,34 +323,34 @@ We are seeking a Junior Python Data Analyst to support product analytics and gro
 **Name:** Neha Varma  
 **Location:** Chennai, India  
 
-## Summary
+Summary
 Recent graduate with basic exposure to Python and spreadsheets. Enthusiastic about learning data analysis but limited experience with SQL, cloud platforms, and API integration. Looking to grow into a data analyst role in a startup environment.
 
-## Skills
+Skills
 - Python (basic scripting)  
 - Excel  
 - Communication  
 - Team collaboration  
 - Problem solving  
 
-## Experience
+Experience
 **Intern | Local Business Operations**  
 - Entered and organized sales data in Excel.  
 - Assisted with basic reporting tasks.  
 - Supported operations team with manual data entry.  
 
-## Projects
+Projects
 - Created a simple Excel chart for monthly sales.  
 - Wrote a basic Python script to calculate averages.  
 
-## Education
+Education
 - Bachelor of Science in Information Technology
 
 # Sample - 3 
 
 # pdf formated 
-- [Download Job Description PDF](https://github.com/<username>/<repo-name>/blob/main/docs/Financial-Analyst-Job-Description.pdf?raw=true)
-- [Download Resume PDF](https://github.com/<username>/<repo-name>/blob/main/docs/financial-analyst-resume-example.pdf?raw=true)
+- [Financial Analyst Job Description (PDF)](docs/Financial-Analyst-Job-Description.pdf)
+- [Financial Analyst Resume Example (PDF)](docs/financial-analyst-resume-example.pdf)
 
 
 ## Demo video
