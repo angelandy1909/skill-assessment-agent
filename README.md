@@ -185,8 +185,6 @@ K --> O
 N --> O
 ```
 
-## Explanation
-Architecture
 The architecture begins when the user uploads a job description and resume into the Streamlit application hosted on Hugging Face Spaces. The app extracts text from the uploaded PDF or text files and sends the content to Groq for analysis.
 
 Candidate match analysis
@@ -215,6 +213,6 @@ The scoring is role-specific and changes based on whether the job is more abilit
 - This project is deployed on Hugging Face Spaces using Streamlit.
 - The app file in this repository is `app.py`.
 - The same codebase is used for the Hugging Face deployment.
-- The app now includes more detailed explanations for scoring, skill gaps, and role analysis.
-- The learning plan now includes curated free and paid courses for missing skills.
+- The app includes detailed explanations for scoring, skill gaps, and role analysis.
+- The learning plan includes curated free and paid courses for missing skills.
 - Groq JSON mode is used to ensure valid JSON outputs for structured sections.
