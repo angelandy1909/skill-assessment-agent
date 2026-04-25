@@ -269,6 +269,29 @@ Resume strengths:
         })
     return fallback
 
+def generate_summary(jd_data, resume_data, score_data):
+    jd_company = jd_data.get("company_context", {})
+    prompt = f"""
+Write a concise paragraph summary for a candidate evaluation.
+
+Use the following information:
+- Job role summary: {jd_data.get("role_summary", "")}
+- Sector: {jd_company.get("sector", "")}
+- Culture signals: {jd_company.get("culture_signals", [])}
+- Work style: {jd_company.get("work_style", [])}
+- Missing ability skills: {score_data.get("missing_ability", [])}
+- Missing personality skills: {score_data.get("missing_personality", [])}
+- Candidate strengths: {resume_data.get("strengths", [])}
+- Candidate behavioral signals: {resume_data.get("behavioral_signals", [])}
+
+Return 2 short paragraphs:
+1. Explain what key skills the candidate lacks.
+2. Explain whether this organization is a good fit or not based on personality and work-style alignment.
+
+Be balanced, direct, and practical. Do not use bullet points.
+"""
+    return ask_groq(prompt)
+
 st.title("AI-Powered Skill Assessment & Personalized Learning Plan")
 st.caption("Upload a job description and a resume to analyze fit, skill gaps, and a realistic learning path.")
 
@@ -302,6 +325,9 @@ if run:
     with st.spinner("Creating assessment questions..."):
         questions_data = generate_assessment_questions(jd_data, score_data)
 
+    with st.spinner("Creating narrative summary..."):
+        narrative_summary = generate_summary(jd_data, resume_data, score_data)
+
     with st.spinner("Creating learning plan..."):
         learning_plan = generate_learning_plan(jd_data, score_data, resume_data)
 
@@ -310,6 +336,9 @@ if run:
     c1.metric("Overall Fit", f"{score_data['overall_score']}%")
     c2.metric("Ability Fit", f"{score_data['ability_score']}%")
     c3.metric("Personality Fit", f"{score_data['personality_score']}%")
+
+    st.subheader("Summary")
+    st.write(narrative_summary)
 
     st.subheader("Job Description Understanding")
     st.json(jd_data)
