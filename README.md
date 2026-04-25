@@ -160,6 +160,7 @@ The diagram shows a simple end-to-end workflow for the app. The user first uploa
 
 ## Detailed Architecture
 
+```mermaid
 flowchart LR
 A[User uploads JD and Resume] --> B[Streamlit App on Hugging Face Spaces]
 B --> C[PDF/Text Extraction]
@@ -182,6 +183,7 @@ H --> K[Scoring/Gap Explanations]
 J --> O[Final Output Display]
 K --> O
 N --> O
+```
 
 ## Explanation
 Architecture
