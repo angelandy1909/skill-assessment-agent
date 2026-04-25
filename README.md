@@ -18,7 +18,7 @@ JD Skill Analyzer is a Streamlit-based AI application deployed on **Hugging Face
 - [[https://huggingface.co/spaces/Angelandy/JD-Skill-Analyzer](https://huggingface.co/spaces/Angelandy/JD-Skill-Analyzer)]
 
 ## What this project helps with
-This project helps compare a **job description** with a **resume** to see how well a candidate fits a role.
+This project helps compare a **job description** with a **resume** to see how well a candidate fits a role. The model analyzes the candidate’s resume against a company-specific job description and identifies skill gaps, keyword gaps, and role alignment issues. Based on this analysis, it suggests resume edits and learning recommendations to improve the candidate’s match with the target role. It helps candidates understand what is missing in their resume for a specific company or role. They can then improve their resume wording, highlight the right experience, and focus on the skills they need to build. It helps recruiters and hiring teams shortlist candidates faster. Instead of manually reading every resume in detail, they can quickly see who is a strong match, who has gaps, and who may need further evaluation. This saves time and improves hiring quality. The model acts like a bridge between a job opening and a candidate’s resume. It tells the candidate how to improve and tells the company who fits best.
 
 It helps to:
 - Identify **hard skills** the candidate has or is missing, such as Python, SQL, data analysis, dashboarding, or generative AI.
@@ -30,6 +30,8 @@ It helps to:
 - Generate **assessment questions** based on missing or weakly supported skills.
 - Create a **personalized learning plan** with estimated time, curated resources, and free/paid course suggestions.
 - Support hiring or career development decisions by making JD and resume analysis faster and clearer.
+- Resume editing help: improves how the candidate presents current skills.
+- Learning plan: helps the candidate build missing skills for future roles.
 
 In short, it is a tool for **candidate-job matching, skill-gap analysis, and personalized improvement guidance**.
 
@@ -205,6 +207,151 @@ The final output is displayed in the Streamlit interface and includes the summar
 ## How Scoring Works
 
 The scoring is role-specific and changes based on whether the job is more ability-heavy, personality-heavy, or balanced. The app compares the resume against the job description, gives separate ability and personality scores, and then combines them using weights based on the role type so technical roles emphasize ability more while people-focused roles emphasize personality more.
+
+## Input Samples that can be used as examples to run the application
+
+#  Sample - 1 
+#  Job Description – Medical Sector
+
+**Role:** Junior Python Data Analyst  
+**Sector:** Healthcare / Medical Research  
+**Location:** Chennai, India  
+**Type:** Full-time  
+
+We are seeking a Junior Python Data Analyst to support clinical data management, reporting, and visualization for a growing healthcare analytics team. The role requires strong Python and SQL skills, familiarity with medical datasets, and the ability to collaborate with doctors, researchers, and operations teams.
+
+## Responsibilities
+- Clean, transform, and analyze patient and clinical trial data using Python and SQL.
+- Build dashboards and reports to support medical researchers and hospital administrators.
+- Work with clinical and operations teams to understand reporting needs.
+- Document workflows to ensure reproducibility and compliance with healthcare standards.
+- Identify trends, anomalies, and risk factors in medical datasets.
+- Present findings clearly to both technical and non-technical healthcare stakeholders.
+
+## Required Skills
+- Python  
+- SQL  
+- Data analysis  
+- Dashboarding  
+- Excel or spreadsheets  
+- Communication  
+- Teamwork  
+- Attention to detail  
+- Adaptability  
+
+## Preferred Skills
+- Power BI or Tableau  
+- Experience with healthcare/clinical data  
+- Knowledge of HIPAA or medical data compliance  
+- Problem solving  
+
+---
+
+# Sample Resume 
+
+**Name:** Drishti Menon  
+**Location:** Chennai, India  
+
+## Summary
+Analytical and detail-oriented data professional with experience in Python, SQL, and healthcare reporting. Skilled at transforming medical datasets into actionable insights and collaborating with cross-functional teams in clinical environments.
+
+## Skills
+- Python (Pandas, NumPy)  
+- SQL  
+- Excel  
+- Power BI  
+- Data visualization  
+- Reporting  
+- Communication  
+- Team collaboration  
+- Problem solving  
+
+## Experience
+**Data Analyst Intern | MedTech Analytics**  
+- Cleaned and transformed patient records and trial data using Python and SQL.  
+- Built weekly dashboards for hospital administrators and research teams.  
+- Collaborated with doctors and operations staff to clarify reporting requirements.  
+- Presented findings to non-technical healthcare stakeholders.  
+
+## Projects
+- Developed a Power BI dashboard to track patient recovery metrics.  
+- Automated cleaning of CSV-based clinical trial data using Python scripts.  
+- Created a reporting workflow for recurring hospital performance metrics.  
+
+## Education
+- Bachelor of Science in Computer Science with specialization in Healthcare Informatics
+
+#  Sample - 2
+
+# Sample Job Description – Startup Tech Company 
+
+**Role:** Junior Python Data Analyst  
+**Sector:** Technology / SaaS Startup  
+**Location:** Chennai, India  
+**Type:** Full-time  
+
+We are seeking a Junior Python Data Analyst to support product analytics and growth initiatives in our fast-moving startup. The role requires strong Python and SQL skills, familiarity with cloud environments, API integration, and the ability to collaborate with product and engineering teams.
+
+## Responsibilities
+- Clean, transform, and analyze product usage and customer data using Python and SQL.
+- Support product teams with ad-hoc analysis and reporting.
+- Collaborate with engineers to integrate data pipelines and APIs.
+- Document workflows and ensure reproducibility of analysis.
+- Identify trends and opportunities for product optimization.
+- Present findings clearly to both technical and non-technical stakeholders.
+
+## Required Skills
+- Python  
+- SQL  
+- Data analysis  
+- Cloud platforms (AWS, GCP, Azure)  
+- API integration  
+- Communication  
+- Teamwork  
+- Attention to detail  
+- Adaptability  
+
+## Preferred Skills
+- Experience with SaaS or startup environments  
+- Problem solving  
+- Exposure to product analytics tools (Mixpanel, Amplitude)  
+
+---
+
+# Sample Resume
+
+**Name:** Neha Varma  
+**Location:** Chennai, India  
+
+## Summary
+Recent graduate with basic exposure to Python and spreadsheets. Enthusiastic about learning data analysis but limited experience with SQL, cloud platforms, and API integration. Looking to grow into a data analyst role in a startup environment.
+
+## Skills
+- Python (basic scripting)  
+- Excel  
+- Communication  
+- Team collaboration  
+- Problem solving  
+
+## Experience
+**Intern | Local Business Operations**  
+- Entered and organized sales data in Excel.  
+- Assisted with basic reporting tasks.  
+- Supported operations team with manual data entry.  
+
+## Projects
+- Created a simple Excel chart for monthly sales.  
+- Wrote a basic Python script to calculate averages.  
+
+## Education
+- Bachelor of Science in Information Technology
+
+# Sample - 3 
+
+# pdf formated 
+- [Download Job Description PDF](https://github.com/<username>/<repo-name>/blob/main/docs/Financial-Analyst-Job-Description.pdf?raw=true)
+- [Download Resume PDF](https://github.com/<username>/<repo-name>/blob/main/docs/financial-analyst-resume-example.pdf?raw=true)
+
 
 ## Demo video
 - Add your 3–5 minute demo video link here.
