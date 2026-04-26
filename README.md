@@ -233,7 +233,7 @@ Education
 ---
 
 ## Demo video
-- Add your 3–5 minute demo video link here.
+[- Add your 3–5 minute demo video link here.](https://drive.google.com/drive/folders/1x6Ri6mAlIP5WXTvCspLPhwuh_bKpB4bN?usp=drive_link)
 
 ## Notes
 - This project is deployed on Hugging Face Spaces using Streamlit.
