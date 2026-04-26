@@ -232,13 +232,6 @@ Education
 - Certified in CPR and Basic Life Support (BLS)
 
 ---
-Sample - 2
-
-pdf formated 
-- [Financial Analyst Job Description (PDF)](Financial-Analyst-Job-Description.pdf)
-- [Resume Example (PDF)](resume-example.pdf)
-
-These sample inputs can be used as examples to understand how the model works and to test its output against different resumes and job descriptions.
 
 ## Demo video
 - Add your 3–5 minute demo video link here.
