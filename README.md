@@ -166,11 +166,10 @@ The diagram shows a simple end-to-end workflow for the app. The user first uploa
 
 The scoring is role-specific and changes based on whether the job is more ability-heavy, personality-heavy, or balanced. The app compares the resume against the job description, gives separate ability and personality scores, and then combines them using weights based on the role type so technical roles emphasize ability more while people-focused roles emphasize personality more.
 
-## Sample Inputs for Running the Application
+---
+## Sample Inputs
 
-Sample - 1 
-Job Description – Medical Sector
-
+Sample Job Description – Medical Sector
 **Role:** Emergency Medical Technician (EMT)  
 **Sector:** Healthcare / Emergency Services  
 **Location:** Chennai, India  
@@ -200,7 +199,7 @@ Preferred Skills
 - Familiarity with electronic health records (EHR) systems  
 - Problem solving in high-stress environments  
 
-Sample Resume
+Resume – Emergency Medical Technician
 
 **Name:** Arjun Menon  
 **Location:** Chennai, India  
